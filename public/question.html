@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothify.Ai</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8);
+      font-family: "Poppins", sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .snow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .snow .circle {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7);
+      animation: snow-animation 15s infinite linear;
+      width: 8px;
+      height: 8px;
+    }
+
+    @keyframes snow-animation {
+      0% {
+        transform: translateY(-100px);
+      }
+
+      50% {
+        transform: translateY(50vh);
+      }
+
+      100% {
+        transform: translateY(-100px);
+      }
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 900px;
+      margin-top: 100px;
+    }
+
+    .container input {
+      width: 80%;
+      padding: 15px;
+      margin: 15px 0;
+      font-size: 0.7rem;
+      border: 2px solid white;
+      border-radius: 50px;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    h1,
+    h2 {
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1050;
+      padding: 6px 0 !important;
+    }
+
+    .header .logo {
+      color: rgb(202, 81, 250);
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .nav-link {
+      color: rgb(202, 81, 250) !important;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    .glow-on-hover {
+      width: 260px;
+      height: 60px;
+      border: none;
+      outline: none;
+      color: rgb(202, 81, 250);
+      background: #000000;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 50px !important;
+      font-size: 20px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #5b98f3, #002bff, #7a00ff, #ff00c8, #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 30px;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      left: 0;
+      top: 0;
+      border-radius: 30px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .container input {
+      width: 80%;
+      padding: 15px;
+      margin: 15px 0;
+      font-size: 1rem;
+      border: 2px solid white;
+      border-radius: 50px;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .container input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+        padding: 0 10px;
+      }
+
+      .container {
+        margin-top: 100px !important;
+        padding: 30px 20px !important;
+        width: 90% !important;
+      }
+
+      .header .logo {
+        font-size: 1.8rem !important;
+      }
+
+      .container input {
+        width: 100%;
+        margin: 15px 0;
+      }
+
+      .glow-on-hover {
+        width: 220px !important;
+        height: 50px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="snow">
+    <div class="circle" style="top:10%; left:20%; animation-duration:20s"></div>
+    <div class="circle" style="top:18%; left:35%; animation-duration:22s"></div>
+    <div class="circle" style="top:50%; left:10%; animation-duration:18s"></div>
+    <div class="circle" style="top:70%; left:45%; animation-duration:23s"></div>
+    <div class="circle" style="top:30%; left:60%; animation-duration:24s"></div>
+    <div class="circle" style="top:05%; left:90%; animation-duration:19s"></div>
+    <div class="circle" style="top:15%; left:65%; animation-duration:21s"></div>
+    <div class="circle" style="top:60%; left:80%; animation-duration:25s"></div>
+    <div class="circle" style="top:45%; left:30%; animation-duration:22s"></div>
+    <div class="circle" style="top:30%; left:15%; animation-duration:17s"></div>
+    <div class="circle" style="top:75%; left:40%; animation-duration:27s"></div>
+    <div class="circle" style="top:80%; left:55%; animation-duration:18s"></div>
+    <div class="circle" style="top:40%; left:50%; animation-duration:19s"></div>
+    <div class="circle" style="top:60%; left:10%; animation-duration:24s"></div>
+    <div class="circle" style="top:20%; left:45%; animation-duration:21s"></div>
+    <div class="circle" style="top:50%; left:65%; animation-duration:26s"></div>
+    <div class="circle" style="top:25%; left:35%; animation-duration:20s"></div>
+    <div class="circle" style="top:70%; left:15%; animation-duration:18s"></div>
+    <div class="circle" style="top:85%; left:25%; animation-duration:23s"></div>
+    <div class="circle" style="top:10%; left:75%; animation-duration:22s"></div>
+    <div class="circle" style="top:50%; left:90%; animation-duration:28s"></div>
+  </div>
+
+
+  <header class="header py-3 px-4 bg-white text-white shadow-sm">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="#" class="logo" onclick="redirectToNewPage2()">Clothify</a>
+      <nav class="d-none d-md-flex align-items-center">
+        <ul class="list-unstyled d-flex mb-0">
+          <li><a href="#home" onclick="redirectToNewPage2()" class="nav-link px-3">Home</a></li>
+          <li><a href="#contact" onclick="redirectToNewPage3()" class="nav-link px-3">Contact</a></li>
+          <li><a href="#features" onclick="redirectToNewPage4()" class="nav-link px-3">Support Creator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <h2>Tell us where you're going, what are the timings<br>How much you wanna spend on the drip,<br>& We'll give you a
+      fit that drips harder than your plans</h2>
+    <input id="userInput" type="text" placeholder="Sup, where we going?">
+    <button id="searchButton" class="glow-on-hover hero">Search</button>
+  </div>
+
+  <script>
+    function redirectToNewPage() {
+      window.location.href = "question.html";
+    }
+    function redirectToNewPage2() {
+      window.location.href = "index.html";
+    }
+    function redirectToNewPage3() {
+      window.location.href = "contact.html";
+    }
+    function redirectToNewPage4() {
+      window.location.href = "https://www.linkedin.com/in/mritunjay-thakur-jay";
+    }
+
+    document.getElementById('searchButton').addEventListener('click', async function () {
+      const userInput = document.getElementById('userInput').value;
+
+      if (!userInput) {
+        alert('Please enter your occasion and budget.');
+        return;
+      }
+
+      try {
+        const response = await fetch('/get-outfit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userInput }),
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const data = await response.json();
+        window.location.href = `answer.html?suggestion=${encodeURIComponent(data.suggestion)}`;
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to fetch outfit suggestion. Please try again.');
+      }
+    });
+  </script>
+</body>
+
+</html>

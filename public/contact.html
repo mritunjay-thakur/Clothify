@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothify.Ai</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8);
+      font-family: "Poppins", sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .avatar {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      font-size: 1.2rem;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .glow-on-hover {
+      width: 260px;
+      height: 60px;
+      border: none;
+      outline: none;
+      color: rgb(202, 81, 250);
+      background: #000000;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 50px !important;
+      font-size: 20px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #5b98f3, #002bff, #7a00ff, #ff00c8, #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 30px;
+    }
+
+    .glow-on-hover:active {
+      color: #ffffff;
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      left: 0;
+      top: 0;
+      border-radius: 30px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+        width: 90%;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .contact-info {
+        font-size: 1.1rem;
+      }
+
+      .social-links a {
+        font-size: 1.3rem;
+        margin: 8px;
+      }
+
+      .glow-on-hover {
+        width: 220px;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .avatar {
+        width: 130px;
+        height: 130px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .contact-info {
+        font-size: 1rem;
+      }
+
+      .social-links a {
+        font-size: 1.1rem;
+        margin: 6px;
+        display: block;
+      }
+
+      .glow-on-hover {
+        width: 200px;
+        height: 45px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="assets/IMG_20220914_192921_024.jpg" alt="Your Avatar" class="avatar" />
+    <h1>Mritunjay Thakur but call me Jay</h1>
+    <h2>Contact Me</h2>
+    <p class="contact-info">📧 Email: Mritunjaythakur903@gmail.com</p>
+    <p class="contact-info">📞 Phone: +917827525872</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/___jaythakur___" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/mritunjay-thakur-jay/" target="_blank">LinkedIn</a>
+    </div>
+    <button class="glow-on-hover" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+</body>
+
+</html>
